@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.parent {
+	display: block;
+	overflow: hidden;
+}
+.child {
+	display: inline-block;
+	transform: translateY(100%);
+}
