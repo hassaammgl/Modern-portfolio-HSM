@@ -90,18 +90,26 @@ const Hero = () => {
     }, []);
 
     return (
-        <section className="relative w-full h-screen bg-[#f5f5f5] overflow-hidden px-8 py-6 flex flex-col justify-between border-b-2 border-gray-200">
+        <section className="relative w-full h-screen overflow-hidden px-8 py-6 flex flex-col justify-between border-b-2 border-gray-200">
             <div className="flex-1 flex items-center justify-center relative">
                 <h1 ref={titleRef} className="absolute text-[13vw] font-extrabold text-green-600 uppercase leading-none tracking-tighter z-0 cursor-pointer" style={{ fontFamily: 'Boldonse' }}>
                     Portfolio.
                 </h1>
-                <img ref={creativeRef} className="-rotate-12 absolute text-[7vw] font-light italic text-black top-[10%] z-10 w-4xl" src="/creative.svg" />
+                {/* <img ref={creativeRef} className="-rotate-12 align-middle w-4xl mb-[9rem] md:mt-[1rem]" src="/creative.svg" />
                 <img
                     ref={heroImageRef}
                     src={"/hero.png"}
                     alt="model"
                     className="absolute grayscale-100 hover:grayscale-0 transition-all ease-in-out duration-500 -bottom-10 z-20 max-h-[80vh] object-contain drop-shadow-black/100 opacity-0"
+                /> */}
+              <img ref={creativeRef} className="-rotate-12 align-middle w-4/5 sm:w-3/5 md:w-2/5 lg:w-4xl mb-16 sm:mb-24 md:mb-[9rem] mt-8 md:mt-[1rem] text-4xl lg:text-5xl xl:text-6xl" src="/creative.svg" />
+                <img
+                    ref={heroImageRef}
+                    src={"/hero.png"}
+                    alt="model"
+                    className="absolute grayscale-100 hover:grayscale-0 transition-all ease-in-out duration-500 bottom-0 sm:-bottom-10 left-0 right-0 mx-auto z-20 max-h-[80vh] object-contain drop-shadow-black/100 opacity-0"
                 />
+
             </div>
             <div className="absolute flex items-center justify-between text-sm text-gray-700 bottom-0 left-0 px-16 py-4 font-sans w-full">
                 <p className='opacity-0' ref={textRef}>I started with <span className="font-semibold text-green-600">curiosity</span>, just trying to build something cool. <br />
