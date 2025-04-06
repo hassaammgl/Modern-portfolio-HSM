@@ -10,7 +10,7 @@ import Contact from "./components/Contact"
 
 const App = () => {
   return (
-    <div className='w-screen h-screen overflow-x-hidden'>
+    <div className='w-screen h-screen overflow-x-hidden bg-[#f9f9f7]'>
       <Navbar />
       <Hero />
       <About />

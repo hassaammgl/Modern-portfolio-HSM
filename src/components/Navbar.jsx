@@ -179,7 +179,7 @@ const Navbar = () => {
     return (
         <>
             {/* 🟢 NAVBAR */}
-            <nav className="flex justify-between items-center p-4 z-[40] fixed top-0 left-0 w-full">
+            <nav className="flex justify-between items-center p-4 z-[40] fixed top-0 left-0 w-full backdrop-blur-3xl">
                 <h1>
                     <a
                         className={`font-extrabold text-3xl transition-colors duration-300 ${isMenuOpen ? 'text-white' : ''
