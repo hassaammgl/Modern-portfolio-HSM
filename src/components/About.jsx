@@ -30,40 +30,81 @@ const About = () => {
     }, []);
 
     return (
+        // <section
+        //     ref={sectionRef}
+        //     className="w-full h-fit flex justify-between items-center flex-col lg:flex-row "
+        // >
+        //     <div ref={textRef} className="relative p-5">
+        //         <h1 className="text-7xl md:text-[6rem] text-green-600" style={{ fontFamily: 'Boldonse' }}>
+        //             <div className='mb-6'>Claudia</div>
+        //             <div>Silvia.</div>
+        //         </h1>
+        //         <h2 style={{ fontFamily: "Cedarville Cursive" }} className="text-3xl font-extrabold relative bottom-6 left-26 -rotate-6">
+        //             Website <span className="">design</span>
+        //         </h2>
+        //         <p className="">
+        //             Started with "let's see what this <b>button</b> does" and ended up <b className='text-green-500'>knee-deep</b> in code. From silly <b>errors</b> to sweet deploys, my dev journey has been one wild ride — and I'm just getting started!
+        //         </p>
+
+        //     </div>
+
+        //     <div
+        //         ref={imageRef}
+        //         className="flex "
+        //     >
+        //         <img
+        //             src="/about.png"
+        //             alt="Claudia Silvia"
+        //             className="max-h-[80vh]"
+        //         />
+        //         <img
+        //             src="/butterfly.png"
+        //             alt="Butterfly"
+        //             className="max-h-36 hidden"
+        //         />
+        //     </div>
+        // </section>
         <section
             ref={sectionRef}
-            className="w-full h-screen flex justify-between items-center flex-col lg:flex-row "
+            className="w-full h-fit flex justify-between items-center flex-col lg:flex-row bg-white px-8 py-12"
         >
-            <div ref={textRef} className="relative p-5">
-                <h1 className="" style={{ fontFamily: 'Boldonse' }}>
-                    <div className=''>Claudia</div>
-                    <div>Silvia <span className='text-green-600'>.</span></div>
+            {/* Left Content */}
+            <div ref={textRef} className="relative max-w-xl">
+                {/* Big Name Heading */}
+                <h1
+                    className="text-6xl md:text-[6rem] text-green-600 leading-none"
+                    style={{ fontFamily: 'Boldonse' }}
+                >
+                    <div className="mb-4">Claudia</div>
+                    <div>Silvia</div>
                 </h1>
-                <h2 style={{ fontFamily: "Cedarville Cursive" }} className="">
-                    Website <span className="">design</span>
-                </h2>
-                <p className="">
-                    Started with "let's see what this <b>button</b> does" and ended up <b className='text-green-500'>knee-deep</b> in code. From silly <b>errors</b> to sweet deploys, my dev journey has been one wild ride — and I'm just getting started!
-                </p>
 
+                {/* Cursive Subtitle */}
+                <h2
+                    style={{ fontFamily: 'Cedarville Cursive' }}
+                    className="text-3xl text-black -rotate-6 mt-[-1rem] mb-4"
+                >
+                    Website <span className="italic">design</span>
+                </h2>
+
+                {/* Dev Journey Text */}
+                <p className="text-lg text-gray-700 leading-relaxed">
+                    Started with <span className="font-semibold">"let's see what this button does"</span> and ended up
+                    <span className="text-green-500 font-bold"> knee-deep</span> in code. From silly
+                    <span className="font-semibold"> errors</span> to sweet <span className="font-semibold">deploys</span>, my dev journey has been one wild ride — and I'm just getting started!
+                </p>
             </div>
 
-            <div
-                ref={imageRef}
-                className="flex "
-            >
+            {/* Right Image */}
+            <div ref={imageRef} className="mt-10 lg:mt-0">
                 <img
                     src="/about.png"
                     alt="Claudia Silvia"
-                    className="max-h-[80vh]"
-                />
-                <img
-                    src="/butterfly.png"
-                    alt="Butterfly"
-                    className="max-h-36"
+                    className="max-h-[80vh] object-contain"
                 />
             </div>
         </section>
+
     );
 };
 
