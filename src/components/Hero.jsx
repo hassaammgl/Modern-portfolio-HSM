@@ -90,7 +90,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <section className="relative w-full h-full overflow-hidden px-4 py-6 flex flex-col justify-between border-b-2 border-gray-200 bg-gradient-to-b from-gray-50 to-white md:px-8">
+        <section className="relative w-full h-full overflow-hidden px-4 py-6 flex flex-col justify-between  bg-gradient-to-b from-gray-50 to-white md:px-8">
             <div className="flex-1 flex items-center justify-center relative">
                 <h1 ref={titleRef} className="absolute font-extrabold text-green-600 uppercase leading-none tracking-tighter z-0 cursor-pointer text-[13vw]" style={{ fontFamily: 'Boldonse' }}>
                     Portfolio.

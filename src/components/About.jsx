@@ -76,9 +76,7 @@ const About = () => {
             ref={sectionRef}
             className="w-full h-fit flex justify-between items-center flex-col lg:flex-row bg-white px-8 py-12 relative"
         >
-            {/* Left Content */}
             <div ref={textRef} className="relative max-w-xl">
-                {/* Big Name Heading */}
                 <h1
                     className="text-6xl sm:text-8xl md:text-[8rem] xl:text-[10rem] 2xl:text-[13rem] text-green-600 leading-none flex justify-between flex-col"
                     style={{ fontFamily: 'Boldonse' }}
