@@ -9,25 +9,67 @@ const About = () => {
     const textRef = useRef(null);
     const imageRef = useRef(null);
 
+
     useEffect(() => {
-        const ctx = gsap.context(() => {
-            gsap.from(textRef.current, {
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: 'top 70%',
-                },
-            });
+        console.log("mounted");
 
-            gsap.from(imageRef.current, {
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: 'top 70%',
-                },
-            });
-        }, sectionRef);
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionRef.current,
+                start: 'top 80%',
+                toggleActions: 'play none none reverse',
+            },
+        });
 
-        return () => ctx.revert(); // Clean up on unmount
+        // Text fade + slide in
+        tl.to(textRef.current, {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            ease: 'power2.out',
+        }, 0)
+            .set(textRef.current, { opacity: 0, x: -80 }, 0)
+
+            // Heading lines (Claudia, Silvia)
+            .to(textRef.current.querySelectorAll('h1 div'), {
+                y: 0,
+                opacity: 1,
+                stagger: 0.2,
+                duration: 1,
+                ease: 'power3.out',
+            }, "-=0.8")
+            .set(textRef.current.querySelectorAll('h1 div'), { y: 50, opacity: 0 }, 0)
+
+            // Cursive Subtitle (Website Design)
+            .to(textRef.current.querySelector('h2'), {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: 'power2.out',
+            }, "-=0.6")
+            .set(textRef.current.querySelector('h2'), { y: 30, opacity: 0 }, 0)
+
+            // Paragraph
+            .to(textRef.current.querySelector('p'), {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: 'power1.out',
+            }, "-=0.6")
+            .set(textRef.current.querySelector('p'), { y: 20, opacity: 0 }, 0);
+
+        // Image animation (on right)
+        tl.to(imageRef.current, {
+            opacity: 1,
+            x: 0,
+            duration: 1.2,
+            ease: 'power2.out',
+        }, "-=1.5")
+            .set(imageRef.current, { opacity: 0, x: 80 }, 0); // Set initial state
     }, []);
+
+
+
 
     return (
         <section
@@ -42,8 +84,7 @@ const About = () => {
                     style={{ fontFamily: 'Boldonse' }}
                 >
                     <div className="mb-4">Claudia</div>
-                    <div>Silvia</div>
-                    {/* Cursive Subtitle */}
+                    <div className="mt-4">Silvia</div>
                     <h2
                         style={{ fontFamily: 'Cedarville Cursive' }}
                         className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl  font-extrabold ml-auto text-gray-800 -rotate-6 mt-[-1rem] mb-4  float-start sm:float-left"
@@ -75,7 +116,6 @@ const About = () => {
                 />
 
             </div>
-            <img src='/wrap.png' className="absolute rotate-180 -bottom-16 -left-4"></img>
         </section>
 
     );

@@ -9,21 +9,26 @@ const Loader = () => {
         const tl = gsap.timeline();
 
         tl.fromTo(
+            loaderRef.current,
+            { height: '0%' },
+            { height: '100%', duration: 0.8, ease: 'power3.inOut' }
+        );
+        tl.fromTo(
             textRef.current,
             { y: 40, opacity: 0 },
             { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
-        )
-            .to(textRef.current, {
-                opacity: 0,
-                duration: 0.8,
-                delay: 0.5,
-                ease: 'power1.out',
-            })
-            .to(loaderRef.current, {
-                y: '-100%',
-                duration: 1,
-                ease: 'power3.inOut',
-            });
+        );
+        tl.to(textRef.current, {
+            opacity: 0,
+            duration: 0.8,
+            delay: 0.5,
+            ease: 'power1.out',
+        });
+        tl.to(loaderRef.current, {
+            height: '0%',
+            duration: 1,
+            ease: 'power3.inOut',
+        });
 
         return () => tl.kill();
     }, []);
