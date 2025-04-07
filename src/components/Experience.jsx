@@ -2,49 +2,37 @@ import React from "react";
 
 const Experience = () => {
     return (
-        <section className="">
-            <div className="">
-                <div className="">
-                    <img
-                        src="/experince.png"
-                        alt="Designer Portrait"
-                        className=""
-                    />
-                    <div className=""></div>
-                </div>
+        <section className="relative border-2 border-red-500 flex flex-col md:flex-row justify-center items-center w-full h-screen">
+            <div className="w-1/3">
+                <img
+                    src="/experince.png"
+                    alt="Designer Portrait"
+                    className="grayscale-100 hover:grayscale-0 transition-all ease-in-out duration-500"
+                />
             </div>
-            <div className="">
-                <div className="">
-                    <h2 className="">
-                        EXPERIENCE
-                        <span style={{ fontFamily: "Mea Culpa" }} className="">
-                            <span className="">G</span>raphic <span className="">D</span>esign
-                        </span>
-                    </h2>
-                </div>
-                <div className="">
-                    <div className="">
-                        <div className="">
-                            <h3 className="">Liceria & Co.</h3>
-                            <p className="">GRAPHIC DESIGNER</p>
-                            <p className="">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
-                            </p>
-                        </div>
-                        <div className="">
-                            <h3 className="">Showde</h3>
-                            <p className="">GRAPHIC DESIGNER</p>
-                            <p className="">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
-                            </p>
-                        </div>
+            <div className="relative">
+                <h2 style={{ fontFamily: 'Boldonse' }} className="text-9xl text-green-500 mb-12">
+                    EXPERIENCE
+                    <span style={{ fontFamily: "Mea Culpa" }} className="text-7xl text-black absolute -top-[6rem] left-2">
+                        <span className="">G</span>raphic <span className="ml-7">D</span>esign
+                    </span>
+                </h2>
+                <div className="flex justify-center items-center">
+                    <div className="text-gray-700 w-md">
+                        <h3 className="font-medium text-3xl mb-2 pl-2">Liceria & Co.</h3>
+                        <p className="mb-7 pl-2">WEB DEVELOPER</p>
+                        <p className="text-sm p-2">
+                            Led development of e-commerce platform with responsive design. Improved load times by 40% and increased user engagement. Integrated payment systems and enhanced security features.
+                        </p>
+                    </div>
+                    <div className="text-gray-700 w-md">
+                        <h3 className="font-medium text-3xl mb-2 pl-2">Parrae Textiles</h3>
+                        <p className="mb-7 pl-2">WEB DEVELOPER</p>
+                        <p className="text-sm p-2">
+                            Developed inventory management system using modern frameworks. Reduced manual data entry by 60% with automated workflows. Created documentation and trained staff.
+                        </p>
                     </div>
                 </div>
-            </div>
-
-            {/* Decorative Elements */}
-            <div className="">
-                <img src="/wrap.png" alt="" />
             </div>
         </section>
     );
