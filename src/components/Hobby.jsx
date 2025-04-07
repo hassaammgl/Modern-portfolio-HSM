@@ -8,7 +8,7 @@ const Hobby = () => {
             }} className="font-extrabold text-green-600 uppercase z-0 cursor-pointer text-center text-[13vw]">MY HOBBY</h1>
             <div className="flex justify-center items-center flex-col md:flex-row">
                 <div className="flex flex-col p-6 justify-center items-center">
-                    <p style={{ fontFamily: "Mea Culpa" }} className="-rotate-12 text-7xl mb-9">Claudia</p>
+                    <p style={{ fontFamily: "Mea Culpa" }} className="-rotate-12 text-7xl mb-9"><span className='text-8xl'>C</span>laudia</p>
                     <p className="font-light">
                         As an artist, I find joy in exploring different forms of visual storytelling.
                         My passion for art extends from traditional mediums to digital creations,
