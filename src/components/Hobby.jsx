@@ -6,8 +6,8 @@ const Hobby = () => {
             <h1 style={{
                 fontFamily: 'Boldonse'
             }} className="font-extrabold text-green-600 uppercase z-0 cursor-pointer text-center text-[13vw]">MY HOBBY</h1>
-            <div className="flex justify-center items-center">
-                <div className="  flex flex-col p-6 justify-center items-center">
+            <div className="flex justify-center items-center flex-col md:flex-row">
+                <div className="flex flex-col p-6 justify-center items-center">
                     <p style={{ fontFamily: "Mea Culpa" }} className="-rotate-12 text-7xl mb-9">Claudia</p>
                     <p className="font-light">
                         As an artist, I find joy in exploring different forms of visual storytelling.
@@ -15,7 +15,7 @@ const Hobby = () => {
                         allowing me to express creativity in unique ways.
                     </p>
                 </div>
-                <div className='h-full w-full relative -top-32'>
+                <div className='h-full w-full relative md:-top-32 '>
                     <img
                         src="/hobby.png"
                         alt="Claudia Silvia"
@@ -23,9 +23,9 @@ const Hobby = () => {
                     />
                 </div>
 
-                <div className="  flex flex-col p-6 justify-center items-start w-">
+                <div className="flex flex-col p-6 justify-center text-center items-center md:items-end">
                     <p className="font-bold text-2xl mb-6">READING MANGA'S & MANHAWA</p>
-                    <p className="font-light text-end">
+                    <p className="font-light text-start md:text-end">
                         These artistic mediums inspire my own creative work. The detailed illustrations
                         and unique storytelling techniques in manga and manhwa have greatly influenced
                         my artistic style and perspective.
