@@ -101,10 +101,10 @@ const Hero = () => {
                     ref={heroImageRef}
                     src={"/hero.png"}
                     alt="model"
-                    className="absolute grayscale-100 hover:grayscale-0 transition-all ease-in-out duration-500 -bottom-10  mx-auto z-20 max-h-[80vh] object-contain drop-shadow-black/100 opacity-0"
+                    className="absolute grayscale-100 hover:grayscale-0 transition-all ease-in-out duration-500 -bottom-10  mx-auto z-10 max-h-[80vh] object-contain drop-shadow-black/100 opacity-0"
                 />
             </div>
-            <div className="absolute flex flex-col items-center justify-between text-sm text-gray-700 bottom-0 left-0 px-4 py-4 font-sans w-full md:px-16 md:flex-row md:text-base ">
+            <div className="absolute flex flex-col items-center justify-between text-sm text-gray-700 bottom-0 left-0 px-4 py-4 font-sans w-full md:px-16 md:flex-row md:text-base z-10">
                 <p className='relative opacity-0 text-center md:text-left z-100' ref={textRef}>I started with <span className="font-semibold text-green-600">curiosity</span>, just trying to build something cool. <br />
                     What began as simple HTML turned into <span className="font-semibold text-green-600">full-stack apps</span> <br /> powered by <span className="font-semibold">React, MongoDB, and more</span>. <br />
                     Now, I code not just to create — but to <span className="font-semibold text-green-600">solve, innovate, and inspire</span></p>
@@ -117,12 +117,3 @@ const Hero = () => {
 };
 
 export default Hero;
-{/* 
-<img ref={creativeRef} className="-rotate-12 align-middle w-4xl mb-[9rem] md:mt-[1rem]" src="/creative.svg" />
-<img
-    ref={heroImageRef}
-    src={"/hero.png"}
-    alt="model"
-    className="absolute grayscale-100 hover:grayscale-0 transition-all ease-in-out duration-500 -bottom-10 z-20 max-h-[80vh] object-contain drop-shadow-black/100 opacity-0"
-/> 
-*/}
