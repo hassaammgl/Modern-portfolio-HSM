@@ -18,9 +18,13 @@ const About = () => {
             y: 30,
             opacity: 0
         })
+        gsap.set("#text", {
+            opacity: 0,
+            y: -200,
+        })
         gsap.to(".title", {
             opacity: 1,
-            ease: "expo.inOut",
+            ease: "circ",
             x: 0,
             duration: 1.3,
             delay: .3,
@@ -28,8 +32,8 @@ const About = () => {
             scrollTrigger: {
                 trigger: '.title',
                 start: "top 80%",
-                end: "top 30%",
-                scrub: .5
+                end: "top center",
+                toggleActions: "play none none reset",
             },
         })
         gsap.to("#cursive", {
@@ -40,29 +44,50 @@ const About = () => {
             scrollTrigger: {
                 trigger: "#cursive",
                 start: "top 80%",
-                end: "top 30%",
-                scrub: .5
+                end: "top center",
+                toggleActions: "play none none reset",
             }
+        })
+        gsap.to("#text", {
+            opacity: 1,
+            ease: "expo.inOut",
+            y: 0,
+            duration: 1.3,
+            scrollTrigger: {
+                trigger: '#text',
+                start: "top 80%",
+                end: "top center",
+                toggleActions: "play none none reset",
+            },
         })
     }, { scope: section })
     useGSAP(() => {
-        gsap.set("#title", {
-            opacity: 0,
-            x: -200,
+        gsap.set(["#girl", "#butterfly"], {
+            y: -400,
+            opacity: 0
         })
-        gsap.to("#title", {
+        gsap.to("#girl", {
+            y: 0,
             opacity: 1,
-            ease: "expo.inOut",
-            x: 0,
-            duration: 1.3,
-            delay: .8,
+            duration: .9,
             scrollTrigger: {
-                trigger: '#title',
+                trigger: '#text',
                 start: "top 80%",
-                end: "top 10%",
-                // markers: true,
-                // scrub: 1.2,
-
+                end: "top center",
+                toggleActions: "play none none reset",
+            },
+        })
+        gsap.to("#butterfly", {
+            y: 0,
+            opacity: 1,
+            duration: .9,
+            delay: .3,
+            ease: "ease.inOut",
+            scrollTrigger: {
+                trigger: '#text',
+                start: "top 80%",
+                end: "top center",
+                toggleActions: "play none none reset",
             },
         })
     }, { scope: section })
@@ -87,7 +112,7 @@ const About = () => {
                         Website design
                     </h2>
                 </h1>
-                <p className="text-gray-700 leading-relaxed text-sm">
+                <p id='text' className="text-gray-700 leading-relaxed text-sm">
                     Started with <span className="font-semibold">"let's see what this button does"</span> and ended up
                     <span className="text-green-500 font-bold"> knee-deep</span> in code. From silly
                     <span className="font-semibold"> errors</span> to sweet <span className="font-semibold">deploys</span>, my dev journey has been one wild ride — and I'm just getting started!
@@ -95,11 +120,13 @@ const About = () => {
             </div>
             <div className="relative mt-10 lg:mt-0 ">
                 <img
+                    id='girl'
                     src="/about.png"
                     alt="Claudia Silvia"
                     className="max-h-[80vh] object-contain"
                 />
                 <img
+                    id='butterfly'
                     src="/butterfly.png"
                     alt="Claudia Silvia"
                     className="max-h-37 absolute  object-contain -left-46 bottom-44 hidden lg:block"
