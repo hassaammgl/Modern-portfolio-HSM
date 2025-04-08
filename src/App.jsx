@@ -11,7 +11,7 @@ const Contact = lazy(() => import('./components/Contact'))
 
 const App = () => {
   return (
-    <div className='w-screen h-screen overflow-x-hidden bg-[#f9f9f7]'>
+    <div className='w-full h-fit overflow-x-hidden bg-[#f9f9f7]'>
       <Navbar />
       <Suspense fallback={<Loader />} >
         <Hero />

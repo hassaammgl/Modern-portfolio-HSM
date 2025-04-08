@@ -15,11 +15,11 @@ const Hobby = () => {
                         allowing me to express creativity in unique ways.
                     </p>
                 </div>
-                <div className='h-full w-full relative md:-top-32 '>
+                <div className='rounded-lg h-full w-full relative md:-top-32 '>
                     <img
                         src="/hobby.png"
                         alt="Claudia Silvia"
-                        className="object-cover"
+                        className="object-cover rounded-lg"
                     />
                 </div>
 
