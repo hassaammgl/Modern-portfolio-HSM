@@ -34,7 +34,6 @@ const Hobby = () => {
                 trigger: '#heading',
                 start: "top 80%",
                 end: "top center",
-                markers: true,
                 toggleActions: "play none none reset",
             },
             onStart: () => {
