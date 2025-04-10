@@ -94,6 +94,7 @@ const About = () => {
 
     return (
         <section
+            id='about'
             ref={section}
             className="w-full h-fit flex justify-between items-center flex-col lg:flex-row bg-white px-8 py-12 relative"
         >

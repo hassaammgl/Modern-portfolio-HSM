@@ -15,7 +15,7 @@ const Hobby = () => {
                         allowing me to express creativity in unique ways.
                     </p>
                 </div>
-                <div className='rounded-lg h-full w-full relative md:-top-32 '>
+                <div className='rounded-lg h-full w-full md:w-7xl relative md:-top-32 '>
                     <img
                         src="/hobby.png"
                         alt="Claudia Silvia"
