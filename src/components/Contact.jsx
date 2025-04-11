@@ -4,18 +4,8 @@ const Contact = () => {
     return (
         <section className="bg-black text-white px-6 py-16 font-sans relative overflow-hidden">
             <div className="max-w-7xl mx-auto">
-                {/* Header Row */}
-                <div className="flex justify-between items-center text-sm mb-10">
-                    <span>By Claudia Silvia</span>
-                    <span className="text-lg font-medium">Portfolio Presentation</span>
-                    <span>Graphic Designer</span>
-                </div>
-
-                {/* Main Content */}
                 <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
-                    {/* Left Section */}
                     <div className="flex flex-col items-start space-y-6">
-                        {/* LET'S Work TOGETHER */}
                         <div>
                             <h2 className="text-green-500 text-7xl lg:text-8xl font-extrabold leading-tight">
                                 LET’S
@@ -28,7 +18,6 @@ const Contact = () => {
                             </span>
                         </div>
 
-                        {/* Contact Info */}
                         <div className="space-y-3 text-base text-white mt-6">
                             <div className="flex items-center gap-2">
                                 <span>🌐</span>
@@ -45,7 +34,6 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    {/* Right Image */}
                     <div className="relative">
                         <img
                             src="/your-model-img.png"
