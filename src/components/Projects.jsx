@@ -104,13 +104,13 @@ const Type1 = ({ name, imgs, desc }) => {
                     {name}
                 </h1>
 
-                <p className="text-lg text-gray-200">{desc}</p>
-
                 <div>
                     <p style={{
                         fontFamily: "Mea Culpa"
-                    }} className="text-3xl">Claudia</p>
+                    }} className="text-7xl">Claudia</p>
                 </div>
+                <p className="text-sm text-gray-200">{desc}</p>
+
             </div>
 
             <div className="relative w-full max-w-xl mx-auto lg:mx-0">
@@ -134,7 +134,7 @@ const Type2 = ({ name, imgs }) => {
     return (
         <>
             <div className="relative inline-block mb-14">
-                <div
+                <div style={{ fontFamily: "Mea Culpa" }}
                     className="absolute -top-8 -left-6 w-20 rotate-[-10deg] opacity-90 pointer-events-none"
                 >Signature</div>
                 <h2 style={{
