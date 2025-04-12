@@ -2,52 +2,43 @@ import React from 'react'
 
 const Contact = () => {
     return (
-        <section className="bg-black text-white px-6 py-16 font-sans relative overflow-hidden">
-            <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
-                    <div className="flex flex-col items-start space-y-6">
-                        <div>
-                            <h2 className="text-green-500 text-7xl lg:text-8xl font-extrabold leading-tight">
-                                LET’S
-                            </h2>
-                            <h2 className="text-green-500 text-7xl lg:text-8xl font-extrabold leading-tight -mt-4">
-                                TOGETHER
-                            </h2>
-                            <span className="absolute left-28 top-36 text-white text-4xl font-signature">
-                                Work
-                            </span>
+        <section className="bg-black text-white flex justify-between items-center relative p-10">
+            <div className="flex justify-center items-start flex-col">
+                <div className='flex flex-col justify-start items-start relative p-2'>
+                    <h2 style={{ fontFamily: 'Boldonse' }} className="font-extrabold text-green-600 uppercase cursor-pointer text-center text-[9vw]">
+                        LET'S
+                    </h2>
+                    <span style={{ fontFamily: "Mea Culpa" }} className="absolute right-40 -top-14 text-[12vw] -rotate-12">
+                        Work
+                    </span>
+                    <h2 style={{ fontFamily: 'Boldonse' }} className="font-extrabold text-green-600 uppercase cursor-pointer text-center text-[9vw]">
+                        TOGETHER
+                    </h2>
+                </div>
+                <div className="flex relative justify-between">
+                    <div className='text-3xl '>
+                        <div className="flex items-center">
+                            <img className='w-12' src="/icons/globe.svg" alt="Globe" />
+                            <a href="#" className="">www.reallygreatsite.com</a>
                         </div>
-
-                        <div className="space-y-3 text-base text-white mt-6">
-                            <div className="flex items-center gap-2">
-                                <span>🌐</span>
-                                <a href="#" className="hover:underline">www.reallygreatsite.com</a>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <span>📞</span>
-                                <span>+123-456-7890</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <span>✉️</span>
-                                <span>hello@reallygreatsite.com</span>
-                            </div>
+                        <div className="flex items-center">
+                            <img className='w-12' src="/icons/call.svg" alt="call" />
+                            <span>+123-456-7890</span>
+                        </div>
+                        <div className="flex items-center">
+                            <img className='w-12' src="/icons/msg.svg" alt="mail" />
+                            <span>hello@reallygreatsite.com</span>
                         </div>
                     </div>
-
-                    <div className="relative">
-                        <img
-                            src="/your-model-img.png"
-                            alt="model"
-                            className="w-[300px] md:w-[400px] object-cover grayscale contrast-125 drop-shadow-xl border-white border-[6px] rounded-lg"
-                        />
-                        <img
-                            src="/your-frog-img.png"
-                            alt="frog"
-                            className="absolute bottom-[-20px] left-[-50px] w-28"
-                        />
-                    </div>
+                    <img className='w-[8rem] hidden md:block' src="butterfly.png" alt="butterfly" />
                 </div>
             </div>
+            <img
+                src="/contact.png"
+                alt="model"
+                className="w-auto h-[70vh] hover:bg-yellow-400 transition-all duration-500 ease-in-out"
+            />
+
         </section>
     );
 }
