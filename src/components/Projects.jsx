@@ -12,83 +12,106 @@ const projects = [
         animationType: "fade-in",
         descriptions: "A journey through celestial landscapes, where dreams and reality intertwine in a cosmic dance of colors and light."
     },
-    {
-        _id: crypto.randomUUID(),
-        code: false,
-        imgs: [
-            "/arts/art3.jpeg",
-            "/arts/art4.jpeg",
-            "/arts/art5.jpg"
-        ],
-        name: "Neon Symphony",
-        animationType: "fade-out",
-        descriptions: "Urban nightscapes come alive with vibrant neon hues, creating a visual symphony of modern city life."
-    },
-    {
-        _id: crypto.randomUUID(),
-        code: true,
-        imgs: [
-            "/arts/art6.webp",
-            "/arts/art7.jpg"
-        ],
-        name: "Digital Wilderness",
-        animationType: "fade-in",
-        descriptions: "Where technology meets nature, creating a surreal landscape of digital flora and fauna in virtual ecosystems."
-    },
-    {
-        _id: crypto.randomUUID(),
-        code: false,
-        imgs: [
-            "/arts/art8.jpg",
-            "/arts/art9.jpg",
-            "/arts/art10.jpg",
-        ],
-        name: "Quantum Pulse",
-        animationType: "fade-out",
-        descriptions: "Exploring the microscopic realm where quantum mechanics creates mesmerizing patterns and endless possibilities."
-    },
-    {
-        _id: crypto.randomUUID(),
-        code: true,
-        imgs: [
-            "/arts/art11.jpg",
-            "/arts/art12.webp",
-        ],
-        name: "Cyber Eden",
-        animationType: "fade-in",
-        descriptions: "A digital paradise where artificial intelligence and organic forms blend into a harmonious utopia."
-    },
-    {
-        _id: crypto.randomUUID(),
-        code: false,
-        imgs: [
-            "/arts/art13.jpg",
-            "/arts/art14.jpg",
-            "/arts/art15.webp",
-        ],
-        name: "Ethereal Nexus",
-        animationType: "fade-out",
-        descriptions: "A convergence of different dimensions, where ethereal beings and abstract forms create otherworldly connections."
-    },
+    // {
+    //     _id: crypto.randomUUID(),
+    //     code: false,
+    //     imgs: [
+    //         "/arts/art3.jpeg",
+    //         "/arts/art4.jpeg",
+    //         "/arts/art5.jpg"
+    //     ],
+    //     name: "Neon Symphony",
+    //     animationType: "fade-out",
+    //     descriptions: "Urban nightscapes come alive with vibrant neon hues, creating a visual symphony of modern city life."
+    // },
+    // {
+    //     _id: crypto.randomUUID(),
+    //     code: true,
+    //     imgs: [
+    //         "/arts/art6.webp",
+    //         "/arts/art7.jpg"
+    //     ],
+    //     name: "Digital Wilderness",
+    //     animationType: "fade-in",
+    //     descriptions: "Where technology meets nature, creating a surreal landscape of digital flora and fauna in virtual ecosystems."
+    // },
+    // {
+    //     _id: crypto.randomUUID(),
+    //     code: false,
+    //     imgs: [
+    //         "/arts/art8.jpg",
+    //         "/arts/art9.jpg",
+    //         "/arts/art10.jpg",
+    //     ],
+    //     name: "Quantum Pulse",
+    //     animationType: "fade-out",
+    //     descriptions: "Exploring the microscopic realm where quantum mechanics creates mesmerizing patterns and endless possibilities."
+    // },
+    // {
+    //     _id: crypto.randomUUID(),
+    //     code: true,
+    //     imgs: [
+    //         "/arts/art11.jpg",
+    //         "/arts/art12.webp",
+    //     ],
+    //     name: "Cyber Eden",
+    //     animationType: "fade-in",
+    //     descriptions: "A digital paradise where artificial intelligence and organic forms blend into a harmonious utopia."
+    // },
+    // {
+    //     _id: crypto.randomUUID(),
+    //     code: false,
+    //     imgs: [
+    //         "/arts/art13.jpg",
+    //         "/arts/art14.jpg",
+    //         "/arts/art15.webp",
+    //     ],
+    //     name: "Ethereal Nexus",
+    //     animationType: "fade-out",
+    //     descriptions: "A convergence of different dimensions, where ethereal beings and abstract forms create otherworldly connections."
+    // },
 ]
 
 const Projects = () => {
+    const renderProject = (project) => {
+        const commonClasses = "px-6 py-20 md:px-20 h-screen flex w-full sticky rounded-md";
+        const darkTheme = "bg-black text-white border-[1px] border-gray-700 " + commonClasses;
+        const lightTheme = "bg-white text-black overflow-hidden " + commonClasses;
+
+        return (
+            <div
+                key={project._id}
+                id={project.animationType}
+                className={project.code ? darkTheme : lightTheme}
+            >
+                {project.code ? (
+                    <Type1
+                        name={project.name}
+                        imgs={project.imgs}
+                        desc={project.descriptions}
+                    />
+                ) : (
+                    <Type2
+                        name={project.name}
+                        imgs={project.imgs}
+                        desc={project.descriptions}
+                    />
+                )}
+            </div>
+        );
+    };
+
     return (
-        <section className='w-full h-fit bg-black p-10'>
-            <h1 style={{ fontFamily: 'Boldonse' }} className="font-extrabold text-green-600 uppercase z-0 cursor-pointer text-center text-[13vw]">Projects</h1>
-            {projects.map(i => (
-                <div id={i.animationType} className={i.code ?
-                    'bg-black text-white px-6 py-20 md:px-20 border-[1px] rounded-md border-gray-700 my-2 h-screen flex '
-                    :
-                    "bg-white text-black px-6 py-20 md:px-20 overflow-hidden rounded-md h-screen flex"} key={i._id}>
-                    {i.code ?
-                        <Type1 name={i.name} imgs={i.imgs} desc={i.descriptions} /> :
-                        <Type2 name={i.name} imgs={i.imgs} desc={i.descriptions} />
-                    }
-                </div>
-            ))}
+        <section className='w-full h-fit bg-black p-10 relative'>
+            <h1
+                style={{ fontFamily: 'Boldonse' }}
+                className="font-extrabold text-green-600 uppercase z-0 cursor-pointer text-center text-[13vw]"
+            >
+                Projects
+            </h1>
+            {projects.map(renderProject)}
         </section>
-    )
+    );
 }
 
 export default Projects
@@ -114,16 +137,18 @@ const Type1 = ({ name, imgs, desc }) => {
             </div>
 
             <div className="relative w-full max-w-xl mx-auto lg:mx-0">
-                <Image2
+                <ProjectImage
                     src={imgs[0]}
                     alt="Project 1"
-                    className="w-72 h-72 md:h-80 md:w-80 border-4 border-white transform rotate-[-5deg] shadow-lg"
+                    className="w-72 h-72 md:h-80 md:w-80 border-4 border-white shadow-lg"
+                    rotate={-5}
                 />
 
-                <Image2
+                <ProjectImage
                     src={imgs[1]}
                     alt="Project 2"
-                    className="w-72 h-72 md:h-80 md:w-80 border-4 border-white absolute -top-20 -right-10 transform rotate-[5deg] shadow-xl hidden md:block"
+                    className="w-72 h-72 md:h-80 md:w-80 border-4 border-white absolute -top-20 -right-10 shadow-xl hidden md:block"
+                    rotate={5}
                 />
             </div>
         </div>
@@ -142,20 +167,20 @@ const Type2 = ({ name, imgs }) => {
                 }} className="text-green-600 text-6xl md:text-7xl font-extrabold">{name}</h2>
             </div>
             <div className="flex justify-center gap-6 md:gap-10 flex-wrap">
-                <Image
+                <ProjectImage
                     src={imgs[0]}
                     alt="Project Image 3"
-                    rotate="-5"
+                    rotate={-5}
                 />
-                <Image
+                <ProjectImage
                     src={imgs[1]}
                     alt="Project Image 3"
-                    rotate="2"
+                    rotate={2}
                 />
-                <Image
+                <ProjectImage
                     src={imgs[2]}
                     alt="Project Image 3"
-                    rotate="5"
+                    rotate={5}
                 />
             </div>
             <div className="absolute bottom-2 left-0 rotate-[-5deg] text-blue-900 text-xs opacity-60">
@@ -168,21 +193,25 @@ const Type2 = ({ name, imgs }) => {
     )
 }
 
-const Image = ({ src, alt = "Project Img", rotate }) => {
+// const Image = ({ src, alt = "Project Img", rotate }) => (
+//     <img
+//         src={src}
+//         alt={alt}
+//         style={{ transform: `rotate(${rotate}deg)` }}
+//         className="w-60 h-60 border-4 border-white shadow-md"
+//     />
+// )
+const ProjectImage = ({ src, alt = "Project Img", className, rotate }) => {
+    const baseClasses = "border-4 border-white shadow-md";
+    const finalClasses = className || `w-60 h-60 ${baseClasses}`;
+
     return (
         <img
             src={src}
             alt={alt}
-            className={`w-60 h-60 border-4 border-white shadow-md rotate-[${rotate}deg]`}
+            style={rotate ? { transform: `rotate(${rotate}deg)` } : undefined}
+            className={finalClasses}
         />
-    )
+    );
 }
-const Image2 = ({ src, alt = "Project Img", className }) => {
-    return (
-        <img
-            src={src}
-            alt={alt}
-            className={className}
-        />
-    )
-}
+

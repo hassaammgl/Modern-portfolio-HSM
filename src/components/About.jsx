@@ -33,7 +33,7 @@ const About = () => {
                 trigger: '.title',
                 start: "top 80%",
                 end: "top center",
-                toggleActions: "play none none reset",
+
             },
         })
         gsap.to("#cursive", {
@@ -45,7 +45,7 @@ const About = () => {
                 trigger: "#cursive",
                 start: "top 80%",
                 end: "top center",
-                toggleActions: "play none none reset",
+
             }
         })
         gsap.to("#text", {
@@ -57,7 +57,7 @@ const About = () => {
                 trigger: '#text',
                 start: "top 80%",
                 end: "top center",
-                toggleActions: "play none none reset",
+
             },
         })
     }, { scope: section })
@@ -74,7 +74,7 @@ const About = () => {
                 trigger: '#text',
                 start: "top 80%",
                 end: "top center",
-                toggleActions: "play none none reset",
+
             },
         })
         gsap.to("#butterfly", {
@@ -87,7 +87,7 @@ const About = () => {
                 trigger: '#text',
                 start: "top 80%",
                 end: "top center",
-                toggleActions: "play none none reset",
+
             },
         })
     }, { scope: section })

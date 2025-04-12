@@ -34,7 +34,7 @@ const Hobby = () => {
                 trigger: '#heading',
                 start: "top 80%",
                 end: "top center",
-                toggleActions: "play none none reset",
+
             },
             onStart: () => {
                 gsap.to("#img", {
@@ -42,7 +42,7 @@ const Hobby = () => {
                     y: 0,
                     duration: 1.5,
                     ease: "elastic.out(1, 0.8)",
-                    toggleActions: "play none none reset",
+
                 })
                 gsap.to(["#para1", "#para2"], {
                     delay: .2,
@@ -50,7 +50,7 @@ const Hobby = () => {
                     x: 0,
                     duration: 1.5,
                     ease: "elastic.out(1, 0.8)",
-                    toggleActions: "play none none reset",
+
                 })
             }
         })
