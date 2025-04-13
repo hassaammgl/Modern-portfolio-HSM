@@ -1,8 +1,72 @@
-import React from 'react'
+import React, { useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
+
+    const section = useRef(null);
+    useGSAP(() => {
+        gsap.set(".title", {
+            opacity: 0,
+            x: -200,
+        })
+        gsap.set("#cursive", {
+            rotate: "-80deg",
+            x: -300,
+            y: 30,
+            opacity: 0
+        })
+        gsap.set("#text", {
+            opacity: 0,
+            y: -200,
+        })
+        gsap.to(".title", {
+            opacity: 1,
+            ease: "circ",
+            x: 0,
+            duration: 1.3,
+            delay: .3,
+            stagger: .5,
+            scrollTrigger: {
+                trigger: '.title',
+                start: "top 80%",
+                end: "top center",
+
+            },
+        })
+        gsap.to("#cursive", {
+            rotate: "-6deg",
+            x: 0,
+            opacity: 1,
+            y: 0,
+            scrollTrigger: {
+                trigger: "#cursive",
+                start: "top 80%",
+                end: "top center",
+
+            }
+        })
+        gsap.to("#text", {
+            opacity: 1,
+            ease: "expo.inOut",
+            y: 0,
+            duration: 1.3,
+            scrollTrigger: {
+                trigger: '#text',
+                start: "top 80%",
+                end: "top center",
+
+            },
+        })
+    }, { scope: section })
+
     return (
-        <section className="bg-black text-white flex justify-between items-center relative p-10">
+        <section ref={section}
+            className="w-full h-fit flex justify-between items-center flex-col lg:flex-row bg-black px-8 py-12 relative text-white"
+        >
             <div className="flex justify-center items-start flex-col">
                 <div className='flex flex-col justify-start items-start relative p-2'>
                     <h2 style={{ fontFamily: 'Boldonse' }} className="font-extrabold text-green-600 uppercase cursor-pointer text-center text-[9vw]">
@@ -16,30 +80,33 @@ const Contact = () => {
                     </h2>
                 </div>
                 <div className="flex relative justify-between">
-                    <div className='text-3xl '>
+                    <div className='text-[3vw]'>
                         <div className="flex items-center">
-                            <img className='w-12' src="/icons/globe.svg" alt="Globe" />
+                            <img className='w-[3vw]' src="/icons/globe.svg" alt="Globe" />
                             <a href="#" className="">www.reallygreatsite.com</a>
                         </div>
                         <div className="flex items-center">
-                            <img className='w-12' src="/icons/call.svg" alt="call" />
+                            <img className='w-[3vw]' src="/icons/call.svg" alt="call" />
                             <span>+123-456-7890</span>
                         </div>
                         <div className="flex items-center">
-                            <img className='w-12' src="/icons/msg.svg" alt="mail" />
+                            <img className='w-[3vw]' src="/icons/msg.svg" alt="mail" />
                             <span>hello@reallygreatsite.com</span>
                         </div>
                     </div>
-                    <img className='w-[8rem] hidden md:block' src="butterfly.png" alt="butterfly" />
+                    <img className='w-[8rem] hidden md:block ml-5' src="butterfly.png" alt="butterfly" />
                 </div>
             </div>
-            <img
-                src="/contact.png"
-                alt="model"
-                className="w-auto h-[70vh] hover:bg-yellow-400 transition-all duration-500 ease-in-out"
-            />
-
+            <div className="relative mt-10 lg:mt-0 hidden lg:block">
+                <img
+                    id='girl'
+                    src="/contact.png"
+                    alt="Claudia Silvia"
+                    className="max-h-[80vh] object-contain"
+                />
+            </div>
         </section>
+
     );
 }
 
