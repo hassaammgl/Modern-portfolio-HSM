@@ -99,7 +99,7 @@ const Navbar = () => {
                 )}
             </nav>
 
-            <div
+            {/* <div
                 ref={menuContainerRef}
                 className={`fixed top-0 left-0 w-screen h-screen bg-black flex items-center justify-center z-[60] transition-all duration-500 ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'
                     }`}
@@ -124,6 +124,47 @@ const Navbar = () => {
                             className="cursor-pointer text-white text-6xl font-semibold hover:opacity-70 transition"
                         >
                             {label}
+                        </Link>
+                    ))}
+                </div>
+            </div> */}
+            <div
+                ref={menuContainerRef}
+                className={`fixed top-0 left-0 w-screen h-screen bg-black flex items-center justify-center z-[60] transition-all duration-500 ${isMenuOpen
+                        ? 'pointer-events-auto opacity-100'
+                        : 'pointer-events-none opacity-0'
+                    }`}
+                style={{
+                    clipPath: isMenuOpen
+                        ? 'circle(150% at 95% 5%)'
+                        : 'circle(0% at 95% 5%)',
+                }}
+            >
+                <button
+                    onClick={handleMenuClick}
+                    aria-label="Close menu"
+                    className="absolute top-6 right-6 z-[70] w-10 h-10 md:top-8 md:right-8 md:w-12 md:h-12 hover:opacity-70 transition-opacity"
+                >
+                    <img
+                        src="/icons/close.svg"
+                        alt="Close menu"
+                        className="w-full h-full invert"
+                    />
+                </button>
+
+                <div className="flex flex-col items-start justify-center gap-4 md:gap-6 h-full w-full px-4 md:px-8 lg:pl-16">
+                    {navLinks.map((label) => (
+                        <Link
+                            key={label}
+                            to={label}
+                            smooth={true}
+                            duration={1200}
+                            onClick={handleMenuClick}
+                            className="cursor-pointer text-white text-4xl md:text-5xl lg:text-6xl font-medium hover:opacity-70 transition-opacity w-full max-w-7xl mx-auto"
+                        >
+                            <span className="inline-block py-2 md:py-3">
+                                {label}
+                            </span>
                         </Link>
                     ))}
                 </div>
