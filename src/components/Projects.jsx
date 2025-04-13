@@ -20,45 +20,6 @@ const Projects = () => {
                 </div>
                 <img className="absolute -bottom-16 -right-10 rotate-[195deg] hidden lg:block" src='/bottom-wrapper.png' alt='wrapper' />
             </section>
-            {/* <div className="w-full h-10 bg-blue-500 sm:bg-red-500 md:bg-amber-500 lg:bg-pink-500 xl:bg-purple-500 2xl:bg-emerald-500" /> */}
-            {/* <section className="">
-                <div className="">
-                    <h1 style={{ fontFamily: "Boldonse" }} className='text-[6vw] md:text-[7vw] lg:text-[8vw] text-green-500 font-extrabold relative z-10'>PROJECT 01</h1>
-                </div>
-                <p className="">
-                    A series of urban landscape sketches capturing the essence of city life. Combining traditional pen work with vibrant watercolor washes, these pieces document the energy and architecture of modern metropolises. Each artwork tells a unique story of urban living and human connection.
-                </p>
-                <div className="">
-                    <div className="">
-                        <img
-                            src="/project02-img1.jpg"
-                            alt="Worker with roller"
-                            width={250}
-                            height={250}
-                            className=""
-                        />
-                    </div>
-                    <div className="">
-                        <img
-                            src="/project02-img2.jpg"
-                            alt="Fashion sketches"
-                            width={250}
-                            height={250}
-                            className=""
-                        />
-                    </div>
-                    <div className="">
-                        <img
-                            src="/project02-img3.jpg"
-                            alt="Botanical drawing"
-                            width={250}
-                            height={250}
-                            className=""
-                        />
-                    </div>
-                </div>
-                <img src="/bottom-wrapper-2.png" alt="wrapper" />
-            </section> */}
         </Element>
     )
 }
