@@ -41,7 +41,7 @@ const Navbar = () => {
 
         menuTL.current = tl;
 
-        return () => tl.kill(); // cleanup
+        return () => tl.kill();
     }, []);
 
     useEffect(() => {
@@ -49,20 +49,17 @@ const Navbar = () => {
         isMenuOpen ? menuTL.current.play() : menuTL.current.reverse();
     }, [isMenuOpen]);
 
-    // 🔥 Scroll-based navbar hide/show
     useEffect(() => {
         const handleScroll = () => {
             const currentY = window.scrollY;
 
             if (currentY > lastScrollY.current && currentY > 100) {
-                // Scroll down → hide navbar
                 gsap.to(navRef.current, {
                     y: '-100%',
                     ease: 'power2.out',
                     duration: 0.4,
                 });
             } else {
-                // Scroll up → show navbar
                 gsap.to(navRef.current, {
                     y: '0%',
                     ease: 'power2.out',
@@ -79,7 +76,6 @@ const Navbar = () => {
 
     return (
         <>
-            {/* 🟢 NAVBAR */}
             <nav
                 ref={navRef}
                 className="fixed top-0 left-0 w-full flex justify-between items-center p-4 z-[40] bg-black transition-transform "
@@ -103,14 +99,12 @@ const Navbar = () => {
                 )}
             </nav>
 
-            {/* ⚫ FULLSCREEN MENU */}
             <div
                 ref={menuContainerRef}
                 className={`fixed top-0 left-0 w-screen h-screen bg-black flex items-center justify-center z-[60] transition-all duration-500 ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'
                     }`}
                 style={{ clipPath: 'circle(0% at 100% 0)' }}
             >
-                {/* ❌ CLOSE BUTTON */}
                 <button
                     onClick={handleMenuClick}
                     aria-label="Close menu"
@@ -119,7 +113,6 @@ const Navbar = () => {
                     <img src="/icons/close.svg" alt="close icon" className="w-full h-full invert" />
                 </button>
 
-                {/* 🔗 NAV LINKS */}
                 <div className="flex flex-col items-start justify-center gap-6 pl-12 h-full w-full">
                     {navLinks.map((label) => (
                         <Link

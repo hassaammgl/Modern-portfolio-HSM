@@ -4,92 +4,61 @@ import { Element } from 'react-scroll'
 const Projects = () => {
     return (
         <Element name="Projects">
-            <section className="min-h-screen bg-black text-white p-8 font-sans relative overflow-hidden">
-                <h1 className="text-7xl font-bold text-green-500 mb-6">PROJECT 01</h1>
-                <div className="mb-10">
-                    <p className="text-2xl italic font-signature mb-4">Claudia</p>
-                    <p className="max-w-md text-sm leading-relaxed text-gray-300">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    </p>
+            <section className="bg-black h-fit lg:h-screen text-white relative p-2 flex justify-between items-center overflow-hidden">
+                <div className='pl-16 flex flex-col justify-center items-start w-2/3 h-screen gap-9'>
+                    <h1 style={{ fontFamily: "Boldonse" }} className='text-[6vw] md:text-[7vw] lg:text-[8vw] text-green-500 font-extrabold relative z-10'>PROJECT 01</h1>
+                    <h3 style={{ fontFamily: "Mea Culpa" }} className='text-4xl md:text-6xl lg:text-9xl'>Claudia</h3>
+                    <p className='w-xl font-light'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, enim! Iure quidem voluptates id earum similique error quae, cupiditate repellat. Eum omnis eaque Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, enim! Iure quidem voluptates id earum similique error quae, cupiditate repellat. Eum omnis eaque at officiis perferendis incidunt odit recusandae maxime?</p>
                 </div>
-                <div className="relative flex gap-6">
-                    <div className="transform -rotate-3 shadow-lg">
-                        <img
-                            src="/project01-img1.jpg"
-                            alt="Fairy Artwork"
-                            width={300}
-                            height={300}
-                            className="rounded border-8 border-white"
-                        />
+                <div className="relative flex-col justify-center w-1/3 h-screen hidden lg:flex">
+                    <div className='w-[25vw] p-3 bg-white absolute z-10 xl:-left-44 2xl:-left-52 top-1/2 rotate-12'>
+                        <img src="/arts/art1.jpg" />
                     </div>
-                    <div className="transform rotate-3 -mt-10 shadow-lg">
-                        <img
-                            src="/project01-img2.jpg"
-                            alt="Whale Illustration"
-                            width={300}
-                            height={300}
-                            className="rounded border-8 border-white"
-                        />
+                    <div className='w-[25vw] p-3 bg-white absolute -rotate-12 top-1/6 '>
+                        <img src="/arts/art2.webp" />
                     </div>
                 </div>
-                <img className="absolute right-0 bottom-0 rotate-6 text-black text-lg p-2 max-w-sm" src='/bottom-wrapper.png' alt='wrapper' />
+                <img className="absolute -bottom-16 -right-10 rotate-[195deg] hidden lg:block" src='/bottom-wrapper.png' alt='wrapper' />
             </section>
-            <div className="w-full h-20 bg-white sm:bg-amber-400 md:bg-green-500 lg:bg-pink-400 xl:bg-red-500 2xl:bg-cyan-600" />
-            <section className="min-h-screen bg-[#f7f7f5] text-black p-8 font-sans relative overflow-hidden">
-                {/* Top Section */}
-                <div className="flex justify-between text-sm mb-8">
-                    <span>By Claudia Silvia</span>
-                    <span>Portfolio Presentation</span>
-                    <span>Graphic Designer</span>
+            <div className="w-full h-10 bg-blue-500 sm:bg-red-500 md:bg-amber-500 lg:bg-pink-500 xl:bg-purple-500 2xl:bg-emerald-500" />
+            {/* <section className="">
+                <div className="">
+                    <h1 style={{ fontFamily: 'Boldonse' }} className="text-green-500 text-[10vw]">P 02</h1>
                 </div>
-
-                {/* Title with Signature Overlay */}
-                <div className="relative mb-10">
-                    <h1 className="text-7xl font-bold text-green-500 text-center">PROJECT 02</h1>
-                    <p className="absolute left-1/3 -top-2 text-4xl italic font-signature transform -rotate-12">
-                        Claudia
-                    </p>
-                </div>
-
-                {/* Images */}
-                <div className="flex justify-center gap-6">
-                    <div className="transform -rotate-3 shadow-lg">
+                <p className="">
+                    A series of urban landscape sketches capturing the essence of city life. Combining traditional pen work with vibrant watercolor washes, these pieces document the energy and architecture of modern metropolises. Each artwork tells a unique story of urban living and human connection.
+                </p>
+                <div className="">
+                    <div className="">
                         <img
                             src="/project02-img1.jpg"
                             alt="Worker with roller"
                             width={250}
                             height={250}
-                            className="rounded border-8 border-white"
+                            className=""
                         />
                     </div>
-                    <div className="transform rotate-1 shadow-lg">
+                    <div className="">
                         <img
                             src="/project02-img2.jpg"
                             alt="Fashion sketches"
                             width={250}
                             height={250}
-                            className="rounded border-8 border-white"
+                            className=""
                         />
                     </div>
-                    <div className="transform rotate-3 shadow-lg">
+                    <div className="">
                         <img
                             src="/project02-img3.jpg"
                             alt="Botanical drawing"
                             width={250}
                             height={250}
-                            className="rounded border-8 border-white"
+                            className=""
                         />
                     </div>
                 </div>
-
-                {/* Handwritten style text fragments */}
-                <div className="absolute bottom-2 left-0 text-sm text-blue-900 italic rotate-2">
-                    strongly believe the moment...
-                </div>
-                <div className="absolute bottom-2 right-0 text-sm text-blue-900 italic -rotate-2">
-                    ...strongly
-                </div>
-            </section>
+                <img src="/bottom-wrapper-2.png" alt="wrapper" />
+            </section> */}
         </Element>
     )
 }
