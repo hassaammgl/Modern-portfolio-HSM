@@ -98,36 +98,6 @@ const Navbar = () => {
                     </button>
                 )}
             </nav>
-
-            {/* <div
-                ref={menuContainerRef}
-                className={`fixed top-0 left-0 w-screen h-screen bg-black flex items-center justify-center z-[60] transition-all duration-500 ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'
-                    }`}
-                style={{ clipPath: 'circle(0% at 100% 0)' }}
-            >
-                <button
-                    onClick={handleMenuClick}
-                    aria-label="Close menu"
-                    className="absolute top-4 right-4 z-[70] w-8 h-8"
-                >
-                    <img src="/icons/close.svg" alt="close icon" className="w-full h-full invert" />
-                </button>
-
-                <div className="flex flex-col items-start justify-center gap-6 pl-12 h-full w-full">
-                    {navLinks.map((label) => (
-                        <Link
-                            key={label}
-                            to={label}
-                            smooth={true}
-                            duration={1200}
-                            onClick={handleMenuClick}
-                            className="cursor-pointer text-white text-6xl font-semibold hover:opacity-70 transition"
-                        >
-                            {label}
-                        </Link>
-                    ))}
-                </div>
-            </div> */}
             <div
                 ref={menuContainerRef}
                 className={`fixed top-0 left-0 w-screen h-screen bg-black flex items-center justify-center z-[60] transition-all duration-500 ${isMenuOpen
