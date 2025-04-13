@@ -1,217 +1,97 @@
 import React from 'react'
-
-const projects = [
-    {
-        _id: crypto.randomUUID(),
-        code: true,
-        imgs: [
-            "/arts/art1.jpg",
-            "/arts/art2.webp"
-        ],
-        name: "Cosmic Dreamer",
-        animationType: "fade-in",
-        descriptions: "A journey through celestial landscapes, where dreams and reality intertwine in a cosmic dance of colors and light."
-    },
-    // {
-    //     _id: crypto.randomUUID(),
-    //     code: false,
-    //     imgs: [
-    //         "/arts/art3.jpeg",
-    //         "/arts/art4.jpeg",
-    //         "/arts/art5.jpg"
-    //     ],
-    //     name: "Neon Symphony",
-    //     animationType: "fade-out",
-    //     descriptions: "Urban nightscapes come alive with vibrant neon hues, creating a visual symphony of modern city life."
-    // },
-    // {
-    //     _id: crypto.randomUUID(),
-    //     code: true,
-    //     imgs: [
-    //         "/arts/art6.webp",
-    //         "/arts/art7.jpg"
-    //     ],
-    //     name: "Digital Wilderness",
-    //     animationType: "fade-in",
-    //     descriptions: "Where technology meets nature, creating a surreal landscape of digital flora and fauna in virtual ecosystems."
-    // },
-    // {
-    //     _id: crypto.randomUUID(),
-    //     code: false,
-    //     imgs: [
-    //         "/arts/art8.jpg",
-    //         "/arts/art9.jpg",
-    //         "/arts/art10.jpg",
-    //     ],
-    //     name: "Quantum Pulse",
-    //     animationType: "fade-out",
-    //     descriptions: "Exploring the microscopic realm where quantum mechanics creates mesmerizing patterns and endless possibilities."
-    // },
-    // {
-    //     _id: crypto.randomUUID(),
-    //     code: true,
-    //     imgs: [
-    //         "/arts/art11.jpg",
-    //         "/arts/art12.webp",
-    //     ],
-    //     name: "Cyber Eden",
-    //     animationType: "fade-in",
-    //     descriptions: "A digital paradise where artificial intelligence and organic forms blend into a harmonious utopia."
-    // },
-    // {
-    //     _id: crypto.randomUUID(),
-    //     code: false,
-    //     imgs: [
-    //         "/arts/art13.jpg",
-    //         "/arts/art14.jpg",
-    //         "/arts/art15.webp",
-    //     ],
-    //     name: "Ethereal Nexus",
-    //     animationType: "fade-out",
-    //     descriptions: "A convergence of different dimensions, where ethereal beings and abstract forms create otherworldly connections."
-    // },
-]
+import { Element } from 'react-scroll'
 
 const Projects = () => {
-    const renderProject = (project) => {
-        const commonClasses = "px-6 py-20 md:px-20 h-screen flex w-full sticky rounded-md";
-        const darkTheme = "bg-black text-white border-[1px] border-gray-700 " + commonClasses;
-        const lightTheme = "bg-white text-black overflow-hidden " + commonClasses;
-
-        return (
-            <div
-                key={project._id}
-                id={project.animationType}
-                className={project.code ? darkTheme : lightTheme}
-            >
-                {project.code ? (
-                    <Type1
-                        name={project.name}
-                        imgs={project.imgs}
-                        desc={project.descriptions}
-                    />
-                ) : (
-                    <Type2
-                        name={project.name}
-                        imgs={project.imgs}
-                        desc={project.descriptions}
-                    />
-                )}
-            </div>
-        );
-    };
-
     return (
-        <section className='w-full h-fit bg-black p-10 relative'>
-            <h1
-                style={{ fontFamily: 'Boldonse' }}
-                className="font-extrabold text-green-600 uppercase z-0 cursor-pointer text-center text-[13vw]"
-            >
-                Projects
-            </h1>
-            {projects.map(renderProject)}
-        </section>
-    );
+        <Element name="Projects">
+            <section className="min-h-screen bg-black text-white p-8 font-sans relative overflow-hidden">
+                <h1 className="text-7xl font-bold text-green-500 mb-6">PROJECT 01</h1>
+                <div className="mb-10">
+                    <p className="text-2xl italic font-signature mb-4">Claudia</p>
+                    <p className="max-w-md text-sm leading-relaxed text-gray-300">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    </p>
+                </div>
+                <div className="relative flex gap-6">
+                    <div className="transform -rotate-3 shadow-lg">
+                        <img
+                            src="/project01-img1.jpg"
+                            alt="Fairy Artwork"
+                            width={300}
+                            height={300}
+                            className="rounded border-8 border-white"
+                        />
+                    </div>
+                    <div className="transform rotate-3 -mt-10 shadow-lg">
+                        <img
+                            src="/project01-img2.jpg"
+                            alt="Whale Illustration"
+                            width={300}
+                            height={300}
+                            className="rounded border-8 border-white"
+                        />
+                    </div>
+                </div>
+                <img className="absolute right-0 bottom-0 rotate-6 text-black text-lg p-2 max-w-sm" src='/bottom-wrapper.png' alt='wrapper' />
+            </section>
+            <div className="w-full h-20 bg-white sm:bg-amber-400 md:bg-green-500 lg:bg-pink-400 xl:bg-red-500 2xl:bg-cyan-600" />
+            <section className="min-h-screen bg-[#f7f7f5] text-black p-8 font-sans relative overflow-hidden">
+                {/* Top Section */}
+                <div className="flex justify-between text-sm mb-8">
+                    <span>By Claudia Silvia</span>
+                    <span>Portfolio Presentation</span>
+                    <span>Graphic Designer</span>
+                </div>
+
+                {/* Title with Signature Overlay */}
+                <div className="relative mb-10">
+                    <h1 className="text-7xl font-bold text-green-500 text-center">PROJECT 02</h1>
+                    <p className="absolute left-1/3 -top-2 text-4xl italic font-signature transform -rotate-12">
+                        Claudia
+                    </p>
+                </div>
+
+                {/* Images */}
+                <div className="flex justify-center gap-6">
+                    <div className="transform -rotate-3 shadow-lg">
+                        <img
+                            src="/project02-img1.jpg"
+                            alt="Worker with roller"
+                            width={250}
+                            height={250}
+                            className="rounded border-8 border-white"
+                        />
+                    </div>
+                    <div className="transform rotate-1 shadow-lg">
+                        <img
+                            src="/project02-img2.jpg"
+                            alt="Fashion sketches"
+                            width={250}
+                            height={250}
+                            className="rounded border-8 border-white"
+                        />
+                    </div>
+                    <div className="transform rotate-3 shadow-lg">
+                        <img
+                            src="/project02-img3.jpg"
+                            alt="Botanical drawing"
+                            width={250}
+                            height={250}
+                            className="rounded border-8 border-white"
+                        />
+                    </div>
+                </div>
+
+                {/* Handwritten style text fragments */}
+                <div className="absolute bottom-2 left-0 text-sm text-blue-900 italic rotate-2">
+                    strongly believe the moment...
+                </div>
+                <div className="absolute bottom-2 right-0 text-sm text-blue-900 italic -rotate-2">
+                    ...strongly
+                </div>
+            </section>
+        </Element>
+    )
 }
 
 export default Projects
-
-const Type1 = ({ name, imgs, desc }) => {
-    return (
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-10">
-            <div className="max-w-xl space-y-6">
-
-                <h1 style={{
-                    fontFamily: 'Boldonse'
-                }} className="text-7xl md:text-9xl font-extrabold text-green-500 leading-none">
-                    {name}
-                </h1>
-
-                <div>
-                    <p style={{
-                        fontFamily: "Mea Culpa"
-                    }} className="text-7xl">Claudia</p>
-                </div>
-                <p className="text-sm text-gray-200">{desc}</p>
-
-            </div>
-
-            <div className="relative w-full max-w-xl mx-auto lg:mx-0">
-                <ProjectImage
-                    src={imgs[0]}
-                    alt="Project 1"
-                    className="w-72 h-72 md:h-80 md:w-80 border-4 border-white shadow-lg"
-                    rotate={-5}
-                />
-
-                <ProjectImage
-                    src={imgs[1]}
-                    alt="Project 2"
-                    className="w-72 h-72 md:h-80 md:w-80 border-4 border-white absolute -top-20 -right-10 shadow-xl hidden md:block"
-                    rotate={5}
-                />
-            </div>
-        </div>
-    )
-}
-
-const Type2 = ({ name, imgs }) => {
-    return (
-        <>
-            <div className="relative inline-block mb-14">
-                <div style={{ fontFamily: "Mea Culpa" }}
-                    className="absolute -top-8 -left-6 w-20 rotate-[-10deg] opacity-90 pointer-events-none"
-                >Signature</div>
-                <h2 style={{
-                    fontFamily: 'Boldonse'
-                }} className="text-green-600 text-6xl md:text-7xl font-extrabold">{name}</h2>
-            </div>
-            <div className="flex justify-center gap-6 md:gap-10 flex-wrap">
-                <ProjectImage
-                    src={imgs[0]}
-                    alt="Project Image 3"
-                    rotate={-5}
-                />
-                <ProjectImage
-                    src={imgs[1]}
-                    alt="Project Image 3"
-                    rotate={2}
-                />
-                <ProjectImage
-                    src={imgs[2]}
-                    alt="Project Image 3"
-                    rotate={5}
-                />
-            </div>
-            <div className="absolute bottom-2 left-0 rotate-[-5deg] text-blue-900 text-xs opacity-60">
-                strongly believe the moment...
-            </div>
-            <div className="absolute bottom-0 right-0 rotate-[5deg] text-blue-900 text-xs opacity-60 hidden md:block">
-                ... strongly
-            </div>
-        </>
-    )
-}
-
-// const Image = ({ src, alt = "Project Img", rotate }) => (
-//     <img
-//         src={src}
-//         alt={alt}
-//         style={{ transform: `rotate(${rotate}deg)` }}
-//         className="w-60 h-60 border-4 border-white shadow-md"
-//     />
-// )
-const ProjectImage = ({ src, alt = "Project Img", className, rotate }) => {
-    const baseClasses = "border-4 border-white shadow-md";
-    const finalClasses = className || `w-60 h-60 ${baseClasses}`;
-
-    return (
-        <img
-            src={src}
-            alt={alt}
-            style={rotate ? { transform: `rotate(${rotate}deg)` } : undefined}
-            className={finalClasses}
-        />
-    );
-}
-
