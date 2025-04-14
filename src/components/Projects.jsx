@@ -49,7 +49,6 @@ const Projects = () => {
                 trigger: ["#heading", "#cursive", "#para"],
                 start: "top 60%",
                 end: "top 50%",
-                markers: true
             }
         })
         gsap.to("#img1", {
@@ -63,7 +62,6 @@ const Projects = () => {
                 trigger: ["#heading", "#cursive", "#para"],
                 start: "top 60%",
                 end: "top 50%",
-                markers: true
             }
         })
         gsap.to("#img2", {
@@ -77,7 +75,6 @@ const Projects = () => {
                 trigger: ["#heading", "#cursive", "#para"],
                 start: "top 60%",
                 end: "top 50%",
-                markers: true
             }
         })
         gsap.to("#wrapper", {
@@ -90,7 +87,6 @@ const Projects = () => {
                 trigger: ["#heading", "#cursive", "#para"],
                 start: "top 60%",
                 end: "top 50%",
-                markers: true
             }
         })
 
