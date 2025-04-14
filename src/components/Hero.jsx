@@ -110,7 +110,7 @@ const Hero = () => {
                     />
                 </div>
                 <div className="absolute flex flex-col items-center justify-between text-sm text-gray-700 bottom-0 left-0 px-4 py-4 font-sans w-full md:px-16 md:flex-row md:text-base z-10">
-                    <p className='relative opacity-0 text-center md:text-left z-100' ref={textRef}>I started with <span className="font-semibold text-green-600">curiosity</span>, just trying to build something cool. <br />
+                    <p className='backdrop-blur-sm relative opacity-0 text-center md:text-left z-100' ref={textRef}>I started with <span className="font-semibold text-green-600">curiosity</span>, just trying to build something cool. <br />
                         What began as simple HTML turned into <span className="font-semibold text-green-600">full-stack apps</span> <br /> powered by <span className="font-semibold">React, MongoDB, and more</span>. <br />
                         Now, I code not just to create — but to <span className="font-semibold text-green-600">solve, innovate, and inspire</span></p>
                     <div ref={githubRef} className="relative scale-0 flex items-center gap-4 font-bold text-gray-700 bg-black px-2 py-2 rounded-full hover:bg-gray-800 hover:scale-105 transform transition-all ease-in-out duration-300 cursor-pointer animate-pulse hover:animate-none hover:shadow-md hover:shadow-black mt-4 md:mt-0 z-100">

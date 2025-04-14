@@ -101,8 +101,8 @@ const Navbar = () => {
             <div
                 ref={menuContainerRef}
                 className={`fixed top-0 left-0 w-screen h-screen bg-black flex items-center justify-center z-[60] transition-all duration-500 ${isMenuOpen
-                        ? 'pointer-events-auto opacity-100'
-                        : 'pointer-events-none opacity-0'
+                    ? 'pointer-events-auto opacity-100'
+                    : 'pointer-events-none opacity-0'
                     }`}
                 style={{
                     clipPath: isMenuOpen
