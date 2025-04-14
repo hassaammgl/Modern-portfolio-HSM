@@ -9,88 +9,52 @@ gsap.registerPlugin(ScrollTrigger);
 const Projects = () => {
 
     const section = useRef(null);
+
     useGSAP(() => {
-        gsap.set("#heading", {
-            x: -800,
+        // Initial setup
+        gsap.set(["#heading", "#cursive", "#para", "#img1", "#img2", "#wrapper"], {
+            x: (i) => [-800, -600, -400, 0, 0, 0][i], // Index-based initial positions
             opacity: 0,
-        })
-        gsap.set("#cursive", {
-            opacity: 0,
-            delay: .3,
-            x: -600,
-        })
-        gsap.set("#para", {
-            opacity: 0,
-            delay: .6,
-            x: -400,
-        })
-        gsap.set("#img1", {
-            rotate: "75deg",
-            y: 600,
-            opacity: 0,
-        })
-        gsap.set("#img2", {
-            rotate: "66deg",
-            opacity: 0,
-            y: 400,
-        })
-        gsap.set("#wrapper", {
-            opacity: 0,
-            y: 400,
-        })
+            y: (i) => [0, 0, 0, 600, 400, 400][i],
+            rotate: (i) => ["0deg", "0deg", "0deg", "75deg", "66deg", "0deg"][i]
+        });
 
-        gsap.to(["#heading", "#cursive", "#para"], {
+        // Create master timeline
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#heading", 
+                start: "top 60%",
+                end: "top 50%",
+            }
+        });
+
+        // Add animations to timeline
+        tl.to(["#heading", "#cursive", "#para"], {
             x: 0,
-            stagger: .1,
             opacity: 1,
+            stagger: 0.1,
             duration: 1,
-            ease: "expo.inOut",
-            scrollTrigger: {
-                trigger: ["#heading", "#cursive", "#para"],
-                start: "top 60%",
-                end: "top 50%",
-            }
+            ease: "expo.inOut"
         })
-        gsap.to("#img1", {
-            y: 0,
-            stagger: .1,
-            opacity: 1,
-            rotate: 12,
-            duration: 1,
-            ease: "expo.inOut",
-            scrollTrigger: {
-                trigger: ["#heading", "#cursive", "#para"],
-                start: "top 60%",
-                end: "top 50%",
-            }
-        })
-        gsap.to("#img2", {
-            y: 0,
-            stagger: .1,
-            opacity: 1,
-            rotate: -12,
-            duration: 1,
-            ease: "expo.inOut",
-            scrollTrigger: {
-                trigger: ["#heading", "#cursive", "#para"],
-                start: "top 60%",
-                end: "top 50%",
-            }
-        })
-        gsap.to("#wrapper", {
-            y: 0,
-            stagger: .1,
-            opacity: 1,
-            duration: 1.5,
-            ease: "expo.inOut",
-            scrollTrigger: {
-                trigger: ["#heading", "#cursive", "#para"],
-                start: "top 60%",
-                end: "top 50%",
-            }
-        })
+            .to("#img1", {
+                y: 0,
+                rotate: 12,
+                opacity: 1,
+                duration: 1
+            }, "<")
+            .to("#img2", {
+                y: 0,
+                rotate: -12,
+                opacity: 1,
+                duration: 1
+            }, "<")
+            .to("#wrapper", {
+                y: 0,
+                opacity: 1,
+                duration: 1.5
+            }, "<");
 
-    }, { scope: section })
+    }, { scope: section });
 
     return (
         <Element name="Projects">

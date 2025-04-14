@@ -23,6 +23,34 @@ const About = () => {
             opacity: 0,
             y: -200,
         })
+        gsap.set(["#girl", "#butterfly"], {
+            y: -400,
+            opacity: 0
+        })
+        gsap.to("#girl", {
+            y: 0,
+            opacity: 1,
+            duration: .9,
+            scrollTrigger: {
+                trigger: '#text',
+                start: "top 80%",
+                end: "top center",
+
+            },
+        })
+        gsap.to("#butterfly", {
+            y: 0,
+            opacity: 1,
+            duration: .9,
+            delay: .3,
+            ease: "ease.inOut",
+            scrollTrigger: {
+                trigger: '#text',
+                start: "top 80%",
+                end: "top center",
+
+            },
+        })
         gsap.to(".title", {
             opacity: 1,
             ease: "circ",
@@ -62,36 +90,8 @@ const About = () => {
             },
         })
     }, { scope: section })
-    useGSAP(() => {
-        gsap.set(["#girl", "#butterfly"], {
-            y: -400,
-            opacity: 0
-        })
-        gsap.to("#girl", {
-            y: 0,
-            opacity: 1,
-            duration: .9,
-            scrollTrigger: {
-                trigger: '#text',
-                start: "top 80%",
-                end: "top center",
 
-            },
-        })
-        gsap.to("#butterfly", {
-            y: 0,
-            opacity: 1,
-            duration: .9,
-            delay: .3,
-            ease: "ease.inOut",
-            scrollTrigger: {
-                trigger: '#text',
-                start: "top 80%",
-                end: "top center",
 
-            },
-        })
-    }, { scope: section })
 
     return (
         <Element name='About' >
@@ -144,5 +144,3 @@ const About = () => {
 
 export default About;
 
-
-// bg-black sm:bg-amber-400 md:bg-green-500 lg:bg-pink-400 xl:bg-red-500 2xl:bg-cyan-600

@@ -10,52 +10,36 @@ const Hobby = () => {
 
     const section = useRef(null);
     useGSAP(() => {
-        gsap.set("#heading", {
+        // Initial setup
+        gsap.set(["#heading", "#para1", "#para2", "#img"], {
             opacity: 0,
-            y: 400,
-        })
-        gsap.set("#para1", {
-            opacity: 0,
-            x: 400,
-        })
-        gsap.set("#para2", {
-            opacity: 0,
-            x: -400,
-        })
-        gsap.set("#img", {
-            opacity: 0,
-            y: 600,
-        })
-        gsap.to("#heading", {
-            opacity: 1,
-            y: 0,
-            duration: 1.5,
-            ease: "elastic.out(1, 0.8)",
+            y: (i) => [400, 0, 0, 600][i],  // Index-based: heading, para1, para2, img
+            x: (i) => [0, 400, -400, 0][i]
+        });
+
+        // Create timeline with scroll trigger
+        const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '#heading',
                 start: "top 80%",
-                end: "top center",
-
+                end: "top center"
             },
-            onStart: () => {
-                gsap.to("#img", {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1.5,
-                    ease: "elastic.out(1, 0.8)",
-
-                })
-                gsap.to(["#para1", "#para2"], {
-                    delay: .2,
-                    opacity: 1,
-                    x: 0,
-                    duration: 1.5,
-                    ease: "elastic.out(1, 0.8)",
-
-                })
+            defaults: { // Set default values for all animations
+                duration: 1.5,
+                ease: "elastic.out(1, 0.8)"
             }
-        })
-    }, { scope: section })
+        });
+
+        // Add animations
+        tl.to("#heading", { y: 0, opacity: 1 })
+            .to("#img", { y: 0, opacity: 1 }, "<") // Run with heading
+            .to(["#para1", "#para2"], {
+                x: 0,
+                opacity: 1,
+                stagger: 0.2 // Stagger between paragraphs
+            }, "<0.2"); // Start 0.2s after previous animations
+
+    }, { scope: section });
 
     return (
         <Element name='Hobby'>
