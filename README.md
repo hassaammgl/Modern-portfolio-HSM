@@ -28,11 +28,6 @@ A modern, interactive portfolio built with **React.js**, **GSAP**, and **Tailwin
   <img src="https://github.com/hassaammgl/Modern-portfolio-HSM/blob/main/preview.png?raw=true" alt="mgl. Portfolio Preview" width="80%" />
 </p>
 
-## 📂 Project Structure
-```arduino
-modern-portfolio-hsm/ ├── public/ │ └── assets/ # Static assets like images and fonts ├── src/ │ ├── components/ # Reusable React components │ ├── pages/ # Page components │ ├── styles/ # Tailwind CSS configurations │ └── App.js # Main application component ├── tailwind.config.js # Tailwind CSS configuration └── package.json # Project metadata and dependencies
-```
-
 ## 🧪 Getting Started
 
 To run this project locally:
