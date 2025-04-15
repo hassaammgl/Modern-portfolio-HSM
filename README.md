@@ -1,33 +1,21 @@
-# React + Vite
+🚀 Just launched my new Animated Graphic Designer Portfolio!
+Say hello to mgl. — a modern visual journey for Claudia Silvia 💚
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🛠️ Built with React.js + GSAP magic
+🌀 Featuring smooth scroll animations, creative layouts, and a deep dive into timeline and ScrollTrigger animation mastery.
 
-Currently, two official plugins are available:
+🔗 Live Website: https://modern-portfolio-hsm.vercel.app/
+📂 GitHub Repo: https://github.com/hassaammgl/Modern-portfolio-HSM
 
--   [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
--   [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+What I Worked On:
+✅ GSAP timelines for smooth component entrance
+✅ ScrollTrigger for advanced scroll-based motion
+✅ Clean responsive UI with Tailwind CSS
+✅ Focus on minimalism, elegance & interaction
 
-## Expanding the ESLint configuration
+📸 Check out the thumbnail below for a quick peek!
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+💬 I'd love your feedback — especially if you're into creative frontend or motion design!
+Let’s connect if you’re working with React, animations, or design-driven projects ✨
 
-```
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-
-import { CustomEase } from "gsap/CustomEase";
-import { RoughEase, ExpoScaleEase, SlowMo } from "gsap/EasePack";
-
-import { Flip } from "gsap/Flip";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Observer } from "gsap/Observer";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { Draggable } from "gsap/Draggable";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import { EaselPlugin } from "gsap/EaselPlugin";
-import { PixiPlugin } from "gsap/PixiPlugin";
-import { TextPlugin } from "gsap/TextPlugin";
-
-
-gsap.registerPlugin(useGSAP,Flip,ScrollTrigger,Observer,ScrollToPlugin,Draggable,MotionPathPlugin,EaselPlugin,PixiPlugin,TextPlugin,RoughEase,ExpoScaleEase,SlowMo,CustomEase);
-```
+#ReactJS #GSAP #ScrollTrigger #FrontendDev #PortfolioDesign #GraphicDesigner #MotionDesign #TailwindCSS #WebDesign #JavaScript #ClaudiaSilvia #mgl #DesignWithMotion
