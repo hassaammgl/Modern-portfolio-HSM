@@ -106,8 +106,12 @@ const Hero = () => {
                         ref={heroImageRef}
                         src={"/hero.png"}
                         alt="model"
-                        className="absolute grayscale-100 hover:grayscale-0 transition-all ease-in-out duration-500 -bottom-10  mx-auto z-10 max-h-[80vh] object-contain drop-shadow-black/100 opacity-0"
+                        className="absolute grayscale-100 hover:grayscale-0 transition-all ease-in-out duration-500 -bottom-10 mx-auto z-10 max-h-[80vh] object-contain drop-shadow-black/100 opacity-0 "
                     />
+                
+                    
+
+
                 </div>
                 <div className="absolute flex flex-col items-center justify-between text-sm text-gray-700 bottom-0 left-0 px-4 py-4 font-sans w-full md:px-16 md:flex-row md:text-base z-10">
                     <p className='backdrop-blur-sm relative opacity-0 text-center md:text-left z-100' ref={textRef}>I started with <span className="font-semibold text-green-600">curiosity</span>, just trying to build something cool. <br />
