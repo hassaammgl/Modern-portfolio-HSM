@@ -1,7 +1,7 @@
 # mgl. — Animated Portfolio for Claudia Silvia
 
 <p align="center">
-  <img src="https://github.com/hassaammgl/Modern-portfolio-HSM/blob/main/banner.png?raw=true" alt="mgl. Portfolio Banner" width="100%" />
+  <img src="./public/thumbnail.png" alt="mgl. Portfolio Banner" width="100%" />
 </p>
 
 A modern, interactive portfolio built with **React.js**, **GSAP**, and **Tailwind CSS**, designed for **Claudia Silvia**. This project emphasizes smooth animations, responsive design, and a clean user interface to highlight creative work effectively.
